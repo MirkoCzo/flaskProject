@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.content
+{
+    flex: 1;
+}
+
+
+.text-orange {
+    color: orange;
+}
+.titre a {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.titre a:hover {
+    color: darkorange;
+}
+.card {
+    position: relative;
+    z-index: 1; /* Valeur par défaut pour les cartes */
+}
+
+.footer {
+    position: relative;
+    z-index: 2; /* Une valeur plus élevée pour le footer, afin qu'il reste au-dessus des cartes */
+    flex-shrink: 0; /* Empêche le footer de rétrécir en cas de peu de contenu */
+
+}
+

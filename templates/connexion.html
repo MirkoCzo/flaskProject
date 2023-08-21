@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Connexion</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flashes">
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+    <form method="POST" action="{{ url_for('connexion') }}">
+        <label for="login" class="text-white">Nom d'utilisateur:</label>
+        <input type="text" id="login" name="login" required><br>
+        <br>
+        <label for="password" class="text-white">Mot de passe:</label>
+        <input type="password" id="password" name="password" required><br>
+        <br>
+        <button type="submit">Se connecter</button>
+    </form>
+{% endblock content %}

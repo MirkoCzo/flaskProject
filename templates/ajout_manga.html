@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2>Ajouter un manga</h2>
+    <div class="form-group text-white pb-3">
+        <form method="POST" action="{{ url_for('ajout_manga') }}">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.nom_manga.label }} {{ form.nom_manga(class_="form-control",size=50) }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.description.label }} {{ form.description(class_="form-control",size=200) }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.prix.label }} {{ form.prix(class_="form-control") }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.id_categorie.label }} {{ form.id_categorie(class_="form-control") }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.image.label }} {{ form.image(class_="form-control",size=50) }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.submit() }}
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
